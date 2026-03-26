@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/met-police-escape-room/static/css/main.2ec4021b.css",
+    "main.js": "/met-police-escape-room/static/js/main.32b70ab0.js",
+    "static/media/tumbleweed.gif": "/met-police-escape-room/static/media/tumbleweed.e244944f50804028e398.gif",
+    "static/media/main-bgrnd-50.png": "/met-police-escape-room/static/media/main-bgrnd-50.e59e02472263c094181d.png",
+    "static/media/ransomware-alert.png": "/met-police-escape-room/static/media/ransomware-alert.3cd720f39f2db11ab3d2.png",
+    "static/media/skull.png": "/met-police-escape-room/static/media/skull.b97c6fdf94e74abd3cc1.png",
+    "static/media/friendlybook.png": "/met-police-escape-room/static/media/friendlybook.f7987c97055c8ad8a002.png",
+    "static/media/offer.png": "/met-police-escape-room/static/media/offer.9ae4957333b7c3cb35c9.png",
+    "static/media/met-police-logo-outlined.svg": "/met-police-escape-room/static/media/met-police-logo-outlined.18968632874e8ad216ca02d9eda79662.svg",
+    "static/media/amazoooom.png": "/met-police-escape-room/static/media/amazoooom.b1ec1fac9158ee025aa4.png",
+    "static/media/padlock-3.png": "/met-police-escape-room/static/media/padlock-3.76366c9a5d9e12a24562.png",
+    "static/media/dinpro-regular-webfont.woff2": "/met-police-escape-room/static/media/dinpro-regular-webfont.e707494e9417047929db.woff2",
+    "static/media/delivereatzz-crop.png": "/met-police-escape-room/static/media/delivereatzz-crop.1a5e86934c7b658aaf5d.png",
+    "static/media/payfriendly.png": "/met-police-escape-room/static/media/payfriendly.e45b7acdca4f4b5f1623.png",
+    "static/media/orbitron-black.woff": "/met-police-escape-room/static/media/orbitron-black.5d8437bd73801d6b7c1b.woff",
+    "static/media/email-sidebar.svg": "/met-police-escape-room/static/media/email-sidebar.61a25b2a62d9ba45f6c5.svg",
+    "static/media/folders.svg": "/met-police-escape-room/static/media/folders.c417042ef66897c8da26.svg",
+    "static/media/digital_dismay-webfont.woff2": "/met-police-escape-room/static/media/digital_dismay-webfont.7afc95e6fdb165b6421e.woff2",
+    "static/media/arcadeclassic-webfont.woff2": "/met-police-escape-room/static/media/arcadeclassic-webfont.ce204b459017c8821c3c.woff2",
+    "static/media/update-cog.svg": "/met-police-escape-room/static/media/update-cog.209c619dc5b0218b17331f3db7224c8d.svg",
+    "static/media/icon-email.svg": "/met-police-escape-room/static/media/icon-email.cb6ef5199bd49a396c4a.svg",
+    "static/media/CER.svg": "/met-police-escape-room/static/media/CER.96cd7a17a66d1e534281.svg",
+    "static/media/icon-paperclip.svg": "/met-police-escape-room/static/media/icon-paperclip.d378179252962e0e992b.svg",
+    "static/media/three-dots.svg": "/met-police-escape-room/static/media/three-dots.1bd31051d6349321308a.svg",
+    "static/media/icon-phone-180.svg": "/met-police-escape-room/static/media/icon-phone-180.76ab48df88ab1a7a9f02.svg",
+    "static/media/icon-phone-45.svg": "/met-police-escape-room/static/media/icon-phone-45.6171b6b243c9a0a3cb5e.svg",
+    "static/media/cog.svg": "/met-police-escape-room/static/media/cog.f04136f9a76e1d05d899a56446e27629.svg",
+    "index.html": "/met-police-escape-room/index.html",
+    "static/media/icon-account-anon.svg": "/met-police-escape-room/static/media/icon-account-anon.1bc9de5de5dfe5868d78.svg",
+    "static/media/icon-close.svg": "/met-police-escape-room/static/media/icon-close.e25103a0873f23c93135.svg",
+    "static/media/icon-error.svg": "/met-police-escape-room/static/media/icon-error.498af4f89433161a808d68ccad3e921b.svg",
+    "static/media/icon-success.svg": "/met-police-escape-room/static/media/icon-success.861edff619fe4dc3f8a474ce03017500.svg",
+    "main.2ec4021b.css.map": "/met-police-escape-room/static/css/main.2ec4021b.css.map",
+    "main.32b70ab0.js.map": "/met-police-escape-room/static/js/main.32b70ab0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2ec4021b.css",
+    "static/js/main.32b70ab0.js"
+  ]
+}

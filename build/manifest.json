@@ -1,0 +1,30 @@
+{
+  "id": "/met-police-escape-room/",  
+  "short_name": "CER",
+  "name": "Cyber Escape Room",
+  "icons": [
+    {
+      "src": "icons/cer-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/cer-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/met-police-escape-room/",
+  "scope": "/met-police-escape-room/",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#032C86",
+  "screenshots": [
+    {
+      "src": "screenshots/desktop-1.jpg",
+      "sizes": "1280x800",
+      "type": "image/jpg",
+      "form_factor": "wide"
+    }
+  ]
+}
