@@ -3,36 +3,14 @@ const BASE = self.location.pathname.replace(/\/service-worker\.js$/, '');
 
 const CACHE_NAME = "cer-v1";
 
-// Core files to cache
+// Core files to cache (no videos)
 const urlsToCache = [
   `${BASE}/`,
   `${BASE}/index.html`,
-  `${BASE}/asset-manifest.json`,
-  `${BASE}/videos/offline/video_01a_1.mp4`,
-  `${BASE}/videos/offline/video_01a_1.vtt`,
-  `${BASE}/videos/02.mp4`,
-  `${BASE}/videos/02.vtt`,
-  `${BASE}/videos/offline/video_03_1.mp4`,
-  `${BASE}/videos/offline/video_03_1.vtt`,
-  `${BASE}/videos/offline/video_04_1.mp4`,
-  `${BASE}/videos/offline/video_04_1.vtt`,
-  `${BASE}/videos/offline/video_05_1.mp4`,
-  `${BASE}/videos/offline/video_05_1.vtt`,
-  `${BASE}/videos/offline/video_06_1.mp4`,
-  `${BASE}/videos/offline/video_06_1.vtt`,
-  `${BASE}/videos/offline/video_07_1.mp4`,
-  `${BASE}/videos/offline/video_07_1.vtt`,
-  `${BASE}/videos/08-successful-close.mp4`,
-  `${BASE}/videos/08-successful-close.vtt`,
-  `${BASE}/videos/08-unsuccessful-close.mp4`,
-  `${BASE}/videos/08-unsuccessful-close.vtt`,
-  `${BASE}/videos/02-news-reporter-successful.mp4`,
-  `${BASE}/videos/02-news-reporter-successful.vtt`,
-  `${BASE}/videos/02-news-reporter-unsuccessful.mp4`,
-  `${BASE}/videos/02-news-reporter-unsuccessful.vtt`
+  `${BASE}/asset-manifest.json`
 ];
 
-// Install: cache core assets + activate immediately
+// Install: cache core assets + build files
 self.addEventListener("install", event => {
   self.skipWaiting();
 
@@ -68,19 +46,49 @@ self.addEventListener("activate", event => {
   event.waitUntil(self.clients.claim());
 });
 
-// Fetch: handle navigation + asset requests properly
+// Fetch: navigation + cache-on-demand for all other assets
 self.addEventListener("fetch", event => {
-  if (event.request.mode === "navigate") {
-    // Handle SPA navigation (React Router)
+  const request = event.request;
+
+  // Handle navigation (React Router)
+  if (request.mode === "navigate") {
     event.respondWith(
-      fetch(event.request).catch(() => caches.match(`${BASE}/index.html`))
+      fetch(request).catch(() => caches.match(`${BASE}/index.html`))
     );
-  } else {
-    // Handle assets (JS, CSS, images, etc.)
-    event.respondWith(
-      caches.match(event.request).then(response => {
-        return response || fetch(event.request);
-      })
-    );
+    return;
   }
+
+  // Handle all other requests (cache-first, then network + cache)
+  event.respondWith(
+    caches.match(request).then(cachedResponse => {
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+
+      return fetch(request)
+        .then(networkResponse => {
+          // Only cache valid responses
+          if (
+            !networkResponse ||
+            networkResponse.status !== 200 ||
+            networkResponse.type === "opaque"
+          ) {
+            return networkResponse;
+          }
+
+          const responseClone = networkResponse.clone();
+
+          // Cache on demand (your chosen approach)
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(request, responseClone);
+          });
+
+          return networkResponse;
+        })
+        .catch(() => {
+          // Optional fallback (could be expanded later)
+          return null;
+        });
+    })
+  );
 });
